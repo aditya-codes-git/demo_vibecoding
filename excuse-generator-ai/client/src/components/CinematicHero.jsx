@@ -99,27 +99,31 @@ const INJECTED_STYLES = `
     padding: 0.75rem 2.5rem 0.75rem 1rem !important;
   }
 
-  .btn-modern-light {
+  .cta-btn-primary {
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    background: linear-gradient(180deg, #d692ff 0%, #af25fe 100%);
-    color: #080e1c;
-    box-shadow: 0 0 0 1px rgba(214,146,255,0.3), 0 2px 4px rgba(0,0,0,0.1), 0 12px 24px -4px rgba(175,37,254,0.4), inset 0 1px 1px rgba(255,255,255,0.4);
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    color: #000000;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.8), 0 10px 30px -10px rgba(214,146,255,0.5), inset 0 2px 2px rgba(255,255,255,1);
   }
-  .btn-modern-light:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 0 1px rgba(214,146,255,0.5), 0 6px 12px -2px rgba(175,37,254,0.3), 0 20px 32px -6px rgba(175,37,254,0.5), inset 0 1px 1px rgba(255,255,255,0.4);
+  .cta-btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 0 1px rgba(255,255,255,1), 0 20px 40px -10px rgba(214,146,255,0.7), inset 0 2px 4px rgba(255,255,255,1);
   }
 
-  .btn-modern-dark {
+  .cta-btn-secondary {
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    background: linear-gradient(180deg, #1d253a 0%, #0c1323 100%);
-    color: #00eefc;
-    box-shadow: 0 0 0 1px rgba(0,238,252,0.15), 0 2px 4px rgba(0,0,0,0.6), 0 12px 24px -4px rgba(0,0,0,0.9), inset 0 1px 1px rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
-  .btn-modern-dark:hover {
-    transform: translateY(-3px);
-    background: linear-gradient(180deg, #232c42 0%, #1d253a 100%);
-    box-shadow: 0 0 0 1px rgba(0,238,252,0.25), 0 6px 12px -2px rgba(0,0,0,0.7), 0 20px 32px -6px rgba(0,0,0,1), inset 0 1px 1px rgba(255,255,255,0.15);
+  .cta-btn-secondary:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.8), inset 0 1px 1px rgba(255,255,255,0.2);
   }
 
   .progress-ring {
@@ -241,19 +245,21 @@ export default function CinematicHero({ className }) {
       </div>
 
       {/* CTA Section */}
-      <div className="cta-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-4 gsap-reveal pointer-events-auto will-change-transform">
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-silver-matte">
-          Get your excuse.
+      {/* CTA Section */}
+      <div className="cta-wrapper absolute inset-0 z-10 flex flex-col items-center justify-center text-center w-full px-6 gsap-reveal pointer-events-auto will-change-transform">
+        <h2 className="text-5xl md:text-7xl lg:text-[7.5rem] font-black mb-8 tracking-tighter text-silver-matte leading-[0.95]">
+          Get your <br className="md:hidden" />excuse.
         </h2>
-        <p className="text-lg md:text-xl mb-12 max-w-xl mx-auto font-light leading-relaxed" style={{ color: '#a5aabe' }}>
+        <p className="text-xl md:text-2xl lg:text-[1.75rem] mb-14 max-w-3xl mx-auto font-medium leading-[1.6]" style={{ color: 'rgba(214,146,255,0.8)' }}>
           Join thousands of creative minds using AI-powered excuses. Choose from 5 cinematic modes and never repeat yourself.
         </p>
-        <div className="flex flex-col sm:flex-row gap-6">
-          <a href="#generator" className="btn-modern-light flex items-center justify-center gap-3 px-8 py-4 rounded-2xl group no-underline">
-            <span className="text-xl font-bold leading-none tracking-tight">🎭 Try It Now</span>
+        <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto items-center justify-center mt-4">
+          <a href="#generator" className="cta-btn-primary flex items-center justify-center gap-3 px-10 h-16 rounded-full group no-underline w-full sm:w-auto">
+            <span className="text-lg font-bold tracking-tight">Try It Now</span>
+            <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </a>
-          <a href="#" className="btn-modern-dark flex items-center justify-center gap-3 px-8 py-4 rounded-2xl group no-underline">
-            <span className="text-xl font-bold leading-none tracking-tight">⚡ Learn More</span>
+          <a href="#" className="cta-btn-secondary flex items-center justify-center gap-3 px-10 h-16 rounded-full group no-underline w-full sm:w-auto">
+            <span className="text-lg font-bold tracking-tight text-gray-300 group-hover:text-white transition-colors">See Examples</span>
           </a>
         </div>
       </div>
@@ -317,7 +323,7 @@ export default function CinematicHero({ className }) {
                           <circle className="progress-ring" cx="88" cy="88" r="68" fill="none" stroke="#d692ff" strokeWidth="16" strokeLinecap="round" strokeDasharray="427" strokeDashoffset="42" />
                         </svg>
                         <div className="text-center z-10 flex flex-col items-center mt-2">
-                          <span className="text-4xl font-black tracking-tighter text-white leading-none">99</span>
+                          <span className="text-4xl font-black tracking-tighter text-white leading-none counter-val">0</span>
                           <span className="text-[8px] uppercase tracking-[0.15em] font-extrabold mt-1" style={{ color: 'rgba(214,146,255,0.6)' }}>EXCUSES MADE</span>
                         </div>
                       </div>

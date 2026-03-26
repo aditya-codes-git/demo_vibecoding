@@ -70,7 +70,6 @@ body {
   min-height: 100vh;
   background: var(--bg-void);
   position: relative;
-  overflow-x: hidden;
 }
 
 /* Ambient "Gas Cloud" Orbs */
@@ -119,11 +118,11 @@ body {
 .app-header {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(8, 14, 28, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--glass-border);
+  z-index: 1000;
+  background: rgba(8, 14, 28, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .header-content {
